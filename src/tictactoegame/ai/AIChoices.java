@@ -8,8 +8,6 @@ import tictactoegame.gui.GUI;
 public class AIChoices extends AIInitializator{
     private final int gameLength = gamePattern.length();
     private int[][] playScore = new int[2][9];
-    //private String[] winningDB;
-    //private String[] losingDB;
     
     public AIChoices(){
         this.fillPlayScores();
