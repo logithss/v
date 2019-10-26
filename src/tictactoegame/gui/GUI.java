@@ -115,6 +115,7 @@ public class GUI extends GameSystem{
                 for(int i = 1; i<10; i++){
                     buttons[i].setText("");
                 }
+                isAgainstComputer = false;
                 frame.dispose();
                 new MainMenu();
             }
