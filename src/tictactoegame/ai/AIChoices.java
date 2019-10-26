@@ -1,6 +1,7 @@
 package tictactoegame.ai;
 
 import java.util.Arrays;
+import java.util.Random;
 import tictactoegame.GameSystem;
 import tictactoegame.ai.aiinitialization.AIInitializator;
 import tictactoegame.gui.GUI;
@@ -73,16 +74,24 @@ public class AIChoices extends AIInitializator{
         int bestPlay = 0;
         int square = 1;
         float[] ratios = Arrays.copyOf(this.ratios(), this.ratios().length);
+        String indexes = "";
         
         for (float ratio : ratios) {
             if(ratio > lastBestPlay){
                 if(GameSystem.grid[square] == 0){
                     lastBestPlay = ratio;
-                    bestPlay = square;
+                    indexes += square;
                 }
             }
             
             square++;
+        }
+        
+        Random rand = new Random();
+        
+        if(indexes.length() > 0){
+            bestPlay = Integer.parseInt("" + 
+                    indexes.charAt(rand.nextInt(indexes.length())));
         }
         
         int whereForWin = this.takeWin();
@@ -132,8 +141,8 @@ public class AIChoices extends AIInitializator{
     private int blockDanger(){        
         if(computerTurn){
             for (String lose : oDB) {
-                if(lose.startsWith(gamePattern) && lose.length() == (gameLength+1))
-                    return Integer.parseInt("" + lose.charAt(gameLength));
+                if(lose.startsWith(gamePattern) && lose.length() == (gameLength+2))
+                    return Integer.parseInt("" + lose.charAt(gameLength+1));
             }
         }
         else{
