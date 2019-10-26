@@ -1,7 +1,6 @@
 package tictactoegame.ai;
 
 import java.util.Arrays;
-import java.util.Random;
 import tictactoegame.GameSystem;
 import tictactoegame.ai.aiinitialization.AIInitializator;
 import tictactoegame.gui.GUI;
@@ -80,18 +79,11 @@ public class AIChoices extends AIInitializator{
             if(ratio > lastBestPlay){
                 if(GameSystem.grid[square] == 0){
                     lastBestPlay = ratio;
-                    indexes += square;
+                    bestPlay = square;
                 }
             }
             
             square++;
-        }
-        
-        Random rand = new Random();
-        
-        if(indexes.length() > 0){
-            bestPlay = Integer.parseInt("" + 
-                    indexes.charAt(rand.nextInt(indexes.length())));
         }
         
         int whereForWin = this.takeWin();
