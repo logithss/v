@@ -37,6 +37,11 @@ public class Wall extends Object implements Comparable<Wall> {
         this.line = line;
         this.id = id;
     }
+    
+    public Point isCrossing(Line l)
+    {
+       return line.isCrossing(l);
+    }
 
     
     public int compareTo(Wall w) {

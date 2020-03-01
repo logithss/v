@@ -31,10 +31,19 @@ public class RenderPanel extends JPanel implements KeyListener{
     
     public void paintComponent(Graphics g){
         super.paintComponent(g);
-        this.setBackground(Color.BLACK);
-        Color c = new Color(5, 8, 6);
-        Line l = new Line();
-        g.drawString(Integer.toString(Game.word), 10, 100); 
+        this.setBackground(Color.gray);
+        
+        for(int x = 0; x < Renderer.screenWidth; x++)
+        {
+            System.out.println("} " + x);
+            for(Strip strip : Renderer.strips[x].strips)
+            {
+                System.out.println(strip.color);
+                g.setColor(strip.color);
+                System.out.println(strip.screenCoordinates[0].x + " " + strip.screenCoordinates[0].y);
+                g.drawLine((int) strip.screenCoordinates[0].x, (int) strip.screenCoordinates[0].y, (int) strip.screenCoordinates[1].x, (int) strip.screenCoordinates[1].y);
+            }
+        }
     }
     
    

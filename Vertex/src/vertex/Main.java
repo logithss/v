@@ -25,25 +25,6 @@ public class Main {
     //static World game;
     public static void main(String[] args){
         // TODO code application logic here
-        
-        /*JFrame window = new JFrame("Vertex Engine");
-        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        window.setSize(480, 360);
-        window.setResizable(true);
-        //window.setUndecorated(true);
-        window.setVisible(true);
-        
-        RenderPanel panel = new RenderPanel();
-        Game.panel = panel;
-        window.add(panel);
-        window.setVisible(true);*/
-        
-        /*Scanner scan = new Scanner(System.in);
-        
-        float x = 2.0f;
-        
-        x = scan.nextFloat();*/
-        
         Line l1 = new Line(new Point(-2, 2), new Point(2, 2));
         Line l2 = new Line(new Point(-1, 3), new Point(1, 3));
         Line l3 = new Line(new Point(-0.5f, 2.5f), new Point(0.5f, 2.5f));
@@ -59,12 +40,36 @@ public class Main {
         Sector s = new Sector(walls);
         
         Game.sectors.add(s);
+        Game.gameLoop();
         
         
-        /*while(true){
-          Game.gameLoop();
+        JFrame window = new JFrame("Vertex Engine");
+        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        window.setSize(480, 360);
+        window.setResizable(true);
+        //window.setUndecorated(true);
+        window.setVisible(true);
+        
+        RenderPanel panel = new RenderPanel();
+        Game.panel = panel;
+        window.add(panel);
+        window.setVisible(true);
+        
+        /*Scanner scan = new Scanner(System.in);
+        
+        float x = 2.0f;
+        
+        x = scan.nextFloat();*/
+        
+        
+        
+        
+         //panel.repaint();
+        
+        while(true){
+          //Game.gameLoop();
           panel.repaint();
-        }*/
+        }
         
         
     }

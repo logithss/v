@@ -9,7 +9,7 @@ package vertex;
  *
  * @author cstuser
  */
-public class Point {
+public class Point implements Comparable<Point>{
     float x, y;
     boolean exist;
 
@@ -27,10 +27,17 @@ public class Point {
         this.exist = true;
     }
     
-    static double getDistance(Point p1, Point p2)
+    
+    float getDistanceTo(Point p)
+    {
+        float a = (float) (Math.pow((this.y - p.y),2) + Math.pow((this.x - p.x),2));
+        return (float) Math.sqrt(a);
+    }
+    
+    static float getDistance(Point p1, Point p2)
     {
         float a = (float) (Math.pow((p2.y - p1.y),2) + Math.pow((p2.x - p1.x),2));
-        return Math.sqrt(a);
+        return (float) Math.sqrt(a);
     }
     
     public String toString()
@@ -40,5 +47,23 @@ public class Point {
         else
             return "dosent exist";
     }
+
+    @Override
+    public int compareTo(Point p) {
+        if(x == p.x) {
+            if(y > p.y) return 1;
+            else if(y == p.y) return 0;
+            else return -1;
+        }
+        else if (y == p.y)
+        {
+            if(x > p.x) return 1;
+            else if(x == p.x) return 0;
+            else return -1;
+        }
+        else return 0;
+    }
+    
+    
     
 }

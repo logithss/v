@@ -18,14 +18,14 @@ public class Game {
     static int word = 123;
     static int speed = 1000;
     
-    static ArrayList<Sector> sectors;
+    static ArrayList<Sector> sectors = new ArrayList<Sector>();
     static int currentSector;
     
     
     static void gameLoop()
     {
         
-          Game.word ++;
+          Renderer.renderWorld();
          
     }
     

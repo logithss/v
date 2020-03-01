@@ -49,7 +49,7 @@ public class Line {
             float denom = Det(x1mx2, y1my2, x3mx4, y3my4);
             if (denom == 0.0)//Lines don't seem to cross
             {
-                    System.out.println("NO CROSS");
+                    //System.out.println("NO CROSS");
                     ixOut = -10000000;
                     iyOut = -10000000;
                     return new Point(false);
@@ -67,19 +67,19 @@ public class Line {
 
                     if (!Float.isFinite(ixOut) || !Float.isFinite(iyOut)) //Probably a numerical issue
                     {
-                            System.out.println("INF");
+                            //System.out.println("INF");
                             return new Point(false);
                     }
                     else
                     {
-                            System.out.println("ALL GOOD");
+                            //System.out.println("ALL GOOD");
                             return new Point(ixOut, iyOut);
                     }
 
             }
             else
             {
-                    System.out.println("NOT IN BOUND");
+                    //System.out.println("NOT IN BOUND");
                     return new Point(false);
             }
             

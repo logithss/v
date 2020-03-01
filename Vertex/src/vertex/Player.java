@@ -19,9 +19,8 @@ public class Player extends Object{
     
     public Player(float x, float y) {
         this.position = new Point(x, y);
-        this.fov = 0;
-        this.speed = 5;
         this.fov = 90;
+        this.speed = 5;
     }
 
     public Player(float x, float y, float angle) {
