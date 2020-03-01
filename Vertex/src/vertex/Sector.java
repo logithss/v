@@ -26,4 +26,9 @@ public class Sector {
      public Sector(ArrayList<Wall> walls) {
         this.walls = walls;
     }
+     
+     public String toString()
+     {
+         return "This sector contains " + walls.size() + " walls";
+     }
 }

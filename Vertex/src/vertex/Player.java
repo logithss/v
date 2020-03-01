@@ -29,6 +29,13 @@ public class Player extends Object{
         this.speed = 5;
         this.fov = 90;
     }
+
+    @Override
+    public String toString() {
+        return "Player{" + "position="+ position + ", speed=" + speed + ", angle=" + angle + '}';
+    }
+    
+    
     
     
     

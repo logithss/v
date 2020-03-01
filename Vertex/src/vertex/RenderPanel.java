@@ -32,16 +32,21 @@ public class RenderPanel extends JPanel implements KeyListener{
     public void paintComponent(Graphics g){
         super.paintComponent(g);
         this.setBackground(Color.gray);
-        
+      
         for(int x = 0; x < Renderer.screenWidth; x++)
         {
             System.out.println("} " + x);
-            for(Strip strip : Renderer.strips[x].strips)
+            System.out.println("Cheking if can render...");
+            if(Renderer.strips[x].render)
             {
-                System.out.println(strip.color);
-                g.setColor(strip.color);
-                System.out.println(strip.screenCoordinates[0].x + " " + strip.screenCoordinates[0].y);
-                g.drawLine((int) strip.screenCoordinates[0].x, (int) strip.screenCoordinates[0].y, (int) strip.screenCoordinates[1].x, (int) strip.screenCoordinates[1].y);
+                for(Strip strip : Renderer.strips[x].strips)
+                {
+                        System.out.println("rendering " + x);
+                        System.out.println(strip.color);
+                        g.setColor(strip.color);
+                        System.out.println(strip.screenCoordinates[0].x + " " + strip.screenCoordinates[0].y);
+                        g.drawLine((int) strip.screenCoordinates[0].x, (int) strip.screenCoordinates[0].y, (int) strip.screenCoordinates[1].x, (int) strip.screenCoordinates[1].y);
+                }
             }
         }
     }
@@ -58,10 +63,10 @@ public class RenderPanel extends JPanel implements KeyListener{
                
                 break;
             case KeyEvent.VK_DOWN:
-                
+                Game.panel.repaint();
                 break;
             case KeyEvent.VK_LEFT:
-                
+                Game.player.position.x += 1;
                 break;
             case KeyEvent.VK_RIGHT:
               

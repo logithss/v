@@ -15,10 +15,11 @@ import java.util.Arrays;
 public class Strip {
     Point[] screenCoordinates = new Point[2];
     Color color;
+    boolean render;
     
     Strip()
     {
-        
+        render = false;
     }
     
     Strip(Point p1, Point p2, Color color)
@@ -26,6 +27,7 @@ public class Strip {
         screenCoordinates[0] = p1;
         screenCoordinates[1] = p2;
         this.color = color;
+        render = true;
     }
     
     Strip(float x, float y1, float y2, Color color)
@@ -33,6 +35,7 @@ public class Strip {
         screenCoordinates[0] = new Point(x, y1);
         screenCoordinates[1] = new Point(x, y2);
         this.color = color;
+        render = true;
     }
     
     Strip(float x, float y1, float y2)
@@ -40,6 +43,7 @@ public class Strip {
         screenCoordinates[0] = new Point(x, y1);
         screenCoordinates[1] = new Point(x, y2);
         this.color = Color.BLACK;
+        render = true;
     }
     
     void arrange()
