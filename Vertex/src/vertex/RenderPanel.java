@@ -32,6 +32,7 @@ public class RenderPanel extends JPanel implements KeyListener{
     public void paintComponent(Graphics g){
         super.paintComponent(g);
         this.setBackground(Color.gray);
+        g.drawString(Long.toString(Game.deltaTime), 10, 10);
       
         for(int x = 0; x < Renderer.screenWidth; x++)
         {

@@ -65,10 +65,12 @@ public class Main {
         //panel.repaint();
         long last_time = System.nanoTime();
         while(true){
-             long time = System.nanoTime();
+            long time = System.nanoTime();
             int delta_time = (int) ((time - last_time) / 1000000);
             last_time = time;
-          //Game.gameLoop();
+            Game.updateDeltaTime(delta_time);
+            //Game.gameLoop();
+            //System.out.println("painting...");
           panel.repaint();
         }
         

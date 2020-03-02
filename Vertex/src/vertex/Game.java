@@ -13,7 +13,7 @@ import java.util.ArrayList;
  */
 public class Game {
     static RenderPanel panel;
-    static float deltaTime = 0;
+    static long deltaTime = 0;
     static Player player = new Player(0, 0);
     
     static int word = 123;
@@ -27,6 +27,10 @@ public class Game {
     {   
           Renderer.renderWorld();
           System.out.println(sectors.get(0).toString());
+    }
+
+    static void updateDeltaTime(long deltaTime) {
+        Game.deltaTime = deltaTime;
     }
     
 }
