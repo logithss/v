@@ -25,12 +25,9 @@ public class Game {
     
     static void gameLoop()
     {   
-          Renderer.renderWorld();
-          System.out.println(sectors.get(0).toString());
-    }
-
-    static void updateDeltaTime(long deltaTime) {
-        Game.deltaTime = deltaTime;
+        Time.updateDeltaTime();
+        Renderer.renderWorld();
+        System.out.println(sectors.get(0).toString());
     }
     
 }

@@ -54,11 +54,12 @@ public class Renderer {
                         System.out.println("////////////////////////////////");
                         System.out.println(w);
                         float hitDistance = crossPoint.getDistanceTo(Game.player.position);
-                        System.out.println("distance is " + hitDistance);
+                        //System.out.println("distance is " + hitDistance);
 
                         if(hitDistance <= fogFallDistance)
                         {
-                            System.out.println("distance works!");
+                            //System.out.println("distance works!");
+                            System.out.println("distance : " + hitDistance);
 
                             float nCeiling;
                             float nFloor;
@@ -70,7 +71,7 @@ public class Renderer {
                             strip.arrange();
 
                             strips[x].strips.add(strip);
-                            System.out.println(strip);
+                            //System.out.println(strip);
 
                             /*nFloor = nFloor - (screenHeight / ((float)distance)) * (w.z) + (screenHeight / ((float)distance)) * (pz - 1);
                             nCeiling = nCeiling - (screenHeight / ((float)distance)) * (w.z) + (screenHeight / ((float)distance)) * (pz - 1);
@@ -88,7 +89,7 @@ public class Renderer {
             
             if(strips[x].strips.size() <= 0)
             {
-                System.out.println("No Strips at " + x);
+                //System.out.println("No Strips at " + x);
                 strips[x].render = false;
             }
 

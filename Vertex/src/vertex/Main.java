@@ -30,7 +30,7 @@ public class Main {
         ArrayList<Wall> walls = new ArrayList<Wall>();
         
         
-        walls.add(new Wall(l1, 1));
+        //walls.add(new Wall(l1, 1));
         walls.add(new Wall(l2, 2));
         
         Sector s = new Sector(walls);
@@ -63,15 +63,12 @@ public class Main {
         
         System.out.println("gonna paint...");
         //panel.repaint();
-        long last_time = System.nanoTime();
-        while(true){
-            long time = System.nanoTime();
-            int delta_time = (int) ((time - last_time) / 1000000);
-            last_time = time;
-            Game.updateDeltaTime(delta_time);
+        while(true)
+        {
+            Time.updateDeltaTime();
             //Game.gameLoop();
             //System.out.println("painting...");
-          panel.repaint();
+            panel.repaint();
         }
         
         

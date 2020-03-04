@@ -32,24 +32,27 @@ public class RenderPanel extends JPanel implements KeyListener{
     public void paintComponent(Graphics g){
         super.paintComponent(g);
         this.setBackground(Color.gray);
-        g.drawString(Long.toString(Game.deltaTime), 10, 10);
+        //System.err.println("Time : " + Time.frameRate);
       
         for(int x = 0; x < Renderer.screenWidth; x++)
         {
-            System.out.println("} " + x);
-            System.out.println("Cheking if can render...");
+            //System.out.println("} " + x);
+            //System.out.println("Cheking if can render...");
             if(Renderer.strips[x].render)
             {
                 for(Strip strip : Renderer.strips[x].strips)
                 {
-                        System.out.println("rendering " + x);
-                        System.out.println(strip.color);
+                        //System.out.println("rendering " + x);
+                        //System.out.println(strip.color);
                         g.setColor(strip.color);
-                        System.out.println(strip.screenCoordinates[0].x + " " + strip.screenCoordinates[0].y);
+                        //System.out.println(strip.screenCoordinates[0].x + " " + strip.screenCoordinates[0].y);
                         g.drawLine((int) strip.screenCoordinates[0].x, (int) strip.screenCoordinates[0].y, (int) strip.screenCoordinates[1].x, (int) strip.screenCoordinates[1].y);
                 }
             }
         }
+        g.setColor(Color.BLACK);
+        g.setFont(new Font("TimesRoman", Font.PLAIN, 20)); 
+        g.drawString(Integer.toString(Time.frameRate), 10, 20);
     }
     
    
